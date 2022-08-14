@@ -35,6 +35,14 @@ let arrayUni: (number | string)[];
 
 arrayUni = [0, 1, 2, "hello"];
 // arrayUni = [0, 1, 2, true]; err
+
+// Literal Types
+let company: "Facebook" | "Google" | "Amazon";
+company = "Amazon";
+
+let memory: 256| 512;
+memory = 256;
+
 const Types = ({ children }: Props) => {
     return (
         <div>
