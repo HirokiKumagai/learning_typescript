@@ -25,6 +25,16 @@ const userA: USER = {
     password: "yyy",
 }
 
+// Union Types
+let value: boolean | number;
+value = true;
+value = 10;
+// value = "hello";  error
+
+let arrayUni: (number | string)[];
+
+arrayUni = [0, 1, 2, "hello"];
+// arrayUni = [0, 1, 2, true]; err
 const Types = ({ children }: Props) => {
     return (
         <div>
