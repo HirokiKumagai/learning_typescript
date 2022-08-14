@@ -90,6 +90,20 @@ const PC2: PC ={
     id: 2,
     OSType: OS.Windows,
 }
+
+// 型の互換性
+const comp1 = "test";
+let comp2: string = comp1;
+
+let comp3: string = "test";
+// let comp4: "test" = comp3; error
+
+let funcComp1 = (x: number) => {};
+
+let funcComp2 = (x: string) => {};
+// funcComp1 = funcComp2; error
+// funcComp2 = funcComp1; error
+
 const Types = ({ children }: Props) => {
     return (
         <div>
