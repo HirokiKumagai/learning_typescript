@@ -44,4 +44,4 @@ const Data = ({ children }: Props) => {
     );
 };
 
-export default Layout;
+export default Data;
