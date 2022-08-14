@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import Data from "../data.json";
+
+type USERS = typeof Data;
 
 type Props = {
     children?: ReactNode;
