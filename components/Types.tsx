@@ -104,6 +104,56 @@ let funcComp2 = (x: string) => {};
 // funcComp1 = funcComp2; error
 // funcComp2 = funcComp1; error
 
+
+// Generics
+interface GEN<T>{
+    item: T;
+};
+
+const gen0: GEN<string> = {item: "hello"};
+// const gen1: GEN = {item: "hello"}; error
+// const gen2: GEN<number> = {item: "hello"}; error
+
+interface GEN1<T = string> {
+    item: T;
+};
+
+const gen3: GEN1 = {item: "hello"};
+
+interface GEN2<T extends string | number> {
+    item: T;
+};
+
+const gen4: GEN2<string> = {item: "hello"};
+// const gen5: GEN2<boolean> = {item: true}; error
+
+function funcGen<T>(props: T){
+    return { item: props }
+};
+const gen6 = funcGen("test");
+const gen7 = funcGen<string>("test");
+const gen8 = funcGen<string | null>(null);
+
+function funcGen1<T extends string | null>(props: T){
+    return { value: props }
+};
+
+const gen9 = funcGen1("hello");
+// const gen10 = funcGen1(3); error
+
+interface Prop {
+    price: number;
+};
+
+function funcGen3<T extends Prop>(props: T) {
+    return {value: props.price};
+};
+const gen11 = funcGen3({price: 10});
+
+const funcGen4 = <T extends Prop>(props: T) => {
+    return {value: props.price};
+}
+
 const Types = ({ children }: Props) => {
     return (
         <div>
