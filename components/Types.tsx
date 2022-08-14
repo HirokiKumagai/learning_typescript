@@ -43,6 +43,15 @@ company = "Amazon";
 let memory: 256| 512;
 memory = 256;
 
+// typeof
+let msg: string = "hi";
+let msg2: typeof msg;
+msg2 = "hello";
+
+let animal = { cat: "small cat" };
+let newAnimal: typeof animal = { cat: "big cat" };
+
+
 const Types = ({ children }: Props) => {
     return (
         <div>
